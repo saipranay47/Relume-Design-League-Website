@@ -9,7 +9,7 @@ export default {
       fontWeight: {
         bold: "bold",
         normal: "normal",
-        medium: 500, 
+        medium: 500,
       },
       keyframes: {
         "slide-in": {
@@ -24,9 +24,24 @@ export default {
             opacity: 1,
           },
         },
+        "up-down": {
+          "0%, 100%": {
+            transform:
+              "translate3d(0px, 0rem, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
+          },
+          "50%": {
+            transform:
+              "translate3d(0px, 2.5rem, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
+          },
+        },
       },
       animation: {
         "slide-in": "slide-in 2s ease forwards",
+        "up-down": "up-down 9s ease-in-out infinite",
+      },
+      cursor: {
+        custom: "url(/cursor.svg), auto",
+
       },
     },
   },

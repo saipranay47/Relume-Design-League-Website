@@ -1,6 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import gradient from "../assets/gradient.svg";
 import { Tiktok, Youtube, Twitter, Figma, Mail } from "./Icons";
+import org1 from "../assets/orange1.png";
+import org2 from "../assets/orange2.png";
+import org3 from "../assets/orange3.png";
+import blue1 from "../assets/blue1.png";
+import blue2 from "../assets/blue2.png";
+import blue3 from "../assets/blue3.png";
+import mel from "../assets/mel.svg";
+import eric from "../assets/eric.svg";
+import kaleb from "../assets/kaleb.svg";
+import josh from "../assets/josh.svg";
 
 const socials = [
   {
@@ -26,6 +36,30 @@ function Hero() {
     if (image) {
       image.classList.add("animate-slide-in");
     }
+  }, []);
+
+  const [x, setX] = useState(0);
+  const [y, setY] = useState(0);
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      const screenWidth = window.innerWidth;
+      const screenHeight = window.innerHeight;
+      const mouseX = e.clientX;
+      const mouseY = e.clientY;
+
+      const newX = (mouseX / screenWidth - 0.5) * 12; 
+      const newY = (mouseY / screenHeight - 0.5) * -12; 
+
+      setX(newX);
+      setY(newY);
+    };
+
+    document.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+    };
   }, []);
 
   return (
@@ -54,7 +88,7 @@ function Hero() {
                 id="email"
                 placeholder="Enter your email"
                 required
-                className="bg-[#222] h-auto min-h-[2.75rem] border border-white/20 rounded-xl mb-0 py-3 px-[1.1rem] leading-[1.6] transition-all duration-[0.2s] w-full focus:shadow-[0_0_0_4px_rgba(255,255,255,0.05)] focus:border-white outline-none "
+                className=" cursor-custom bg-[#222] h-auto min-h-[2.75rem] border border-white/20 rounded-xl mb-0 py-3 px-[1.1rem] leading-[1.6] transition-all duration-[0.2s] w-full focus:shadow-[0_0_0_4px_rgba(255,255,255,0.05)] focus:border-white outline-none "
               />
               <input type="submit" value="Subscribe" className="button" />
             </div>
@@ -77,11 +111,100 @@ function Hero() {
               <a
                 href={social.url}
                 key={social.name}
-                className="p-0 h-11 text-white bg-[#222] border transition-all duration-[0.2s] flex w-11 justify-center items-center rounded-xl border-solid border-[#494949] hover:border-[#fff]"
+                className=" cursor-none p-0 h-11 text-white bg-[#222] border transition-all duration-[0.2s] flex w-11 justify-center items-center rounded-xl border-solid border-[#494949] hover:border-[#fff]"
               >
                 {social.icon}
               </a>
             ))}
+          </div>
+        </div>
+
+        <div className=" z-0 w-full h-full max-w-screen-xl justify-center items-center flex absolute pb-8">
+          <div className="h-[50vh] min-h-[25rem] flex-col justify-between items-start flex absolute mr-auto rounded-[100px] left-0 right-auto inset-y-auto">
+            <img
+              src={org1}
+              alt=""
+              className="animate-[up-down_9s_ease-in-out_3s_infinite] w-24 h-24 ml-32 rounded-2xl"
+              loading="lazy"
+              style={{ transformStyle: "preserve-3d" }}
+            />
+            <img
+              src={org2}
+              alt=""
+              className="animate-[up-down_9s_ease-in-out_0s_infinite] w-24 h-24 rounded-2xl"
+              loading="lazy"
+              style={{ transformStyle: "preserve-3d" }}
+            />
+            <img
+              src={org3}
+              alt=""
+              className="animate-[up-down_9s_ease-in-out_6s_infinite] w-24 h-24 ml-40 rounded-2xl"
+              loading="lazy"
+              style={{ transformStyle: "preserve-3d" }}
+            />
+            <img
+              src={mel}
+              alt="mel cursor"
+              className="absolute top-[30%] left-[50%] h-9 ease-in-out"
+              style={{
+                transform: `translate3d(${x}rem, ${-y}rem, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`,
+                transformStyle: "preserve-3d",
+                willChange: "transform",
+              }}
+            />
+            <img
+              src={eric}
+              alt="eric cursor"
+              className="absolute bottom-[30%] right-[-10%] h-9 ease-in-out"
+              style={{
+                transform: `translate3d(${x}rem, ${y}rem, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`,
+                transformStyle: "preserve-3d",
+                willChange: "transform",
+              }}
+            />
+          </div>
+          <div className="h-[50vh] min-h-[25rem] flex-col justify-between items-end flex absolute left-auto right-0 inset-y-auto">
+            <img
+              src={blue1}
+              alt=""
+              className="animate-[up-down_9s_ease-in-out_0s_infinite] w-24 h-24 mr-32 rounded-2xl"
+              loading="lazy"
+              style={{ transformStyle: "preserve-3d" }}
+            />
+            <img
+              src={blue2}
+              alt=""
+              className="animate-[up-down_9s_ease-in-out_5s_infinite] w-24 h-24 rounded-2xl"
+              loading="lazy"
+              style={{ transformStyle: "preserve-3d" }}
+            />
+            <img
+              src={blue3}
+              alt=""
+              className="animate-[up-down_9s_ease-in-out_3s_infinite] w-24 h-24 mr-40 rounded-2xl"
+              loading="lazy"
+              style={{ transformStyle: "preserve-3d" }}
+            />
+            <img
+              src={kaleb}
+              alt="kaleb cursor"
+              className="absolute top-[30%] right-[60%] h-9 ease-in-out"
+              style={{
+                transform: `translate3d(${x}rem, ${y}rem, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`,
+                transformStyle: "preserve-3d",
+                willChange: "transform",
+              }}
+            />
+            <img
+              src={josh}
+              alt="josh cursor"
+              className="absolute bottom-[15%] right-[10%] h-9 ease-in-out"
+              style={{
+                transform: `translate3d(${x}rem, ${-y}rem, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`,
+                transformStyle: "preserve-3d",
+                willChange: "transform",
+              }}
+            />
           </div>
         </div>
 
