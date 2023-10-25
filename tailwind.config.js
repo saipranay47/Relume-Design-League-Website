@@ -4,7 +4,12 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        relative: ["Relative"], 
+        relative: ["Relative"],
+      },
+      fontWeight: {
+        bold: "bold",
+        normal: "normal",
+        medium: 500, 
       },
       keyframes: {
         "slide-in": {
