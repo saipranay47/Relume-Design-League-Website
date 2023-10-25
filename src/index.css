@@ -2,7 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
+body {
   background-color: #161616;
   color: white;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Relative";
+  font-style: normal;
+  font-weight: bold;
+  src: url("./assets/fonts/Relative-Bold.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Relative";
+  font-style: normal;
+  font-weight: normal;
+  src: url("./assets/fonts/Relative-Book.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Relative";
+  font-style: normal;
+  font-weight: medium;
+  src: url("./assets/fonts/Relative-Medium.ttf") format("ttf");
 }
