@@ -41,7 +41,9 @@ export default {
       },
       cursor: {
         custom: "url(/cursor.svg), auto",
-
+      },
+      screens: {
+        "mdd": "991px",
       },
     },
   },
