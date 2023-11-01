@@ -1,8 +1,27 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Relume Design League Landing Page
 
-Currently, two official plugins are available:
+This is a rebuild of the Relume Design League landing page using React and Tailwind CSS. The goal of this project was to replicate the original UI and animations as closely as possible.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+___
+![relume resign league landing page using react and tailwind](image.png)
+___
+
+## Features
+
+* React and Tailwind CSS implementation
+* Faithful recreation of the original UI and animations
+* Responsive design looks great on any device
+* Easy to customize
+
+## Customization
+
+To customize the landing page, simply edit the `src/components` directory. This directory contains all of the React components for the landing page.
+
+You can also add your own custom CSS to the `src/index.css` file.
+
+## Conclusion
+
+I hope you enjoy using this React and Tailwind CSS rebuild of the Relume Design League landing page! If you have any questions or feedback, please feel free to create an issue on the GitHub repository.
+
+**Link:** https://relumedesignleague.vercel.app/
